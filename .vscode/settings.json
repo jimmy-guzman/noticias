@@ -1,5 +1,12 @@
 {
-  "cSpell.words": ["daisyui", "gitzy", "noticias", "tailwindcss"],
+  "cSpell.words": [
+    "daisyui",
+    "gitzy",
+    "noticias",
+    "tailwindcss",
+    "tanstack",
+    "trpc"
+  ],
   "editor.formatOnSave": true,
   "css.lint.unknownAtRules": "ignore"
 }
