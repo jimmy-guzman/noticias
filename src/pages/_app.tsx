@@ -1,17 +1,22 @@
-import type { AppType } from 'next/app'
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
-import Layout from '@/components/layout'
+import type { AppType } from "next/app";
 
-import { trpc } from '../utils/trpc'
+import Layout from "@/components/layout";
 
-import '@/styles/globals.css'
+import { trpc } from "../utils/trpc";
 
-const MyApp: AppType = ({ Component, pageProps }) => {
+import "@/styles/globals.css";
+
+const App: AppType = ({ Component, pageProps }) => {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  )
-}
+    <>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </>
+  );
+};
 
-export default trpc.withTRPC(MyApp)
+export default trpc.withTRPC(App);

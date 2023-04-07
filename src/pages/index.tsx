@@ -1,52 +1,16 @@
-import { formatDistanceToNow, fromUnixTime } from 'date-fns'
-
-import { trpc } from '@/utils/trpc'
+import { StoriesTable, SkeletonTable } from "@/components/tables";
+import { trpc } from "@/utils/trpc";
 
 export default function Home() {
-  const { data } = trpc.topStories.useQuery()
+  const { data } = trpc.topStories.useQuery();
 
   return (
     <div className="prose max-w-none">
-      <h1>Top Stories</h1>
       {data ? (
-        <div className="overflow-x-auto">
-          <table className="table table-zebra table-compact w-full">
-            <thead>
-              <tr>
-                <th></th>
-                <th>Title</th>
-                <th>Points</th>
-                <th>By</th>
-                <th>Created At</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map(({ id, title, by, score, time, url }, index) => {
-                return (
-                  <tr key={id}>
-                    <th>{index}</th>
-                    <td>
-                      <a
-                        href={url}
-                        className="link link-hover"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {title}
-                      </a>
-                    </td>
-                    <td>{score}</td>
-                    <td>{by}</td>
-                    <td>{formatDistanceToNow(fromUnixTime(time))} ago</td>
-                  </tr>
-                )
-              })}
-            </tbody>
-          </table>
-        </div>
+        <StoriesTable stories={data} />
       ) : (
-        <progress className="progress w-56" />
+        <SkeletonTable cols={[1, 4, 2, 2, 2, 2]} rows={50} />
       )}
     </div>
-  )
+  );
 }
