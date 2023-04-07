@@ -2,6 +2,7 @@
   "name": "noticias",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -38,6 +39,7 @@
     "gitzy": "3.4.0",
     "postcss": "8.4.21",
     "prettier": "2.8.7",
+    "prettier-plugin-tailwindcss": "0.2.7",
     "tailwindcss": "3.3.1",
     "typescript": "5.0.3"
   }

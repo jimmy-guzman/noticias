@@ -53,7 +53,7 @@ export const Table = <TData,>({
 
   return (
     <div className="overflow-x-auto">
-      <table className={clsx("table table-compact w-full", className)}>
+      <table className={clsx("table-compact table w-full", className)}>
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>

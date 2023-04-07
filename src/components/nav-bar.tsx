@@ -8,7 +8,7 @@ export const NavBar = () => {
       <div className="flex-1">
         <Link
           href="/"
-          className="btn btn-ghost normal-case text-xl text-primary"
+          className="btn-ghost btn text-xl normal-case text-primary"
         >
           🗞️ noticias
         </Link>

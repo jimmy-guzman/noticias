@@ -17,7 +17,7 @@ const columns = [
       info.row.original.url ? (
         <a
           href={info.row.original.url}
-          className="link link-hover"
+          className="link-hover link"
           target="_blank"
           rel="noopener noreferrer"
         >

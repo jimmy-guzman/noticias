@@ -20,9 +20,9 @@ export const SkeletonTable = ({ rows, cols }: SkeletonTableProps) => {
 
     return cols.map((_col, key) =>
       columnHelper.accessor(key.toString(), {
-        header: () => <div className="h-4 bg-base-200 rounded" />,
+        header: () => <div className="h-4 rounded bg-base-200" />,
         cell: (info) => (
-          <div className="h-4 bg-base-200 rounded">
+          <div className="h-4 rounded bg-base-200">
             <span className="invisible">{info.getValue()}</span>
           </div>
         ),
