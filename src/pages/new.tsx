@@ -2,12 +2,12 @@ import { formatDistanceToNow, fromUnixTime } from 'date-fns'
 
 import { trpc } from '@/utils/trpc'
 
-export default function Home() {
-  const { data } = trpc.topStories.useQuery()
+export default function New() {
+  const { data } = trpc.newStories.useQuery()
 
   return (
     <div className="prose max-w-none">
-      <h1>Top Stories</h1>
+      <h1>New Stories</h1>
       {data ? (
         <div className="overflow-x-auto">
           <table className="table table-zebra table-compact w-full">
