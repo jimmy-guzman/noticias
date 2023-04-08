@@ -5,6 +5,7 @@ module.exports = {
   },
   rules: {
     "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/member-ordering": "off",
     "@typescript-eslint/naming-convention": "off",
     "id-length": ["error", { exceptions: ["t"] }],
     "import/no-anonymous-default-export": "off",

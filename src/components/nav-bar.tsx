@@ -2,6 +2,15 @@ import Link from "next/link";
 
 import { ActiveLink } from "./active-link";
 
+const links = [
+  { to: "/", title: "Top" },
+  { to: "/new", title: "New" },
+  { to: "/best", title: "Best" },
+  { to: "/ask", title: "Ask" },
+  { to: "/show", title: "Show" },
+  { to: "/jobs", title: "Jobs" },
+];
+
 export const NavBar = () => {
   return (
     <div className="navbar bg-base-100">
@@ -15,21 +24,13 @@ export const NavBar = () => {
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
-          <li>
-            <ActiveLink href="/" activeClassName="text-accent">
-              Top
-            </ActiveLink>
-          </li>
-          <li>
-            <ActiveLink href="/new" activeClassName="text-accent">
-              New
-            </ActiveLink>
-          </li>
-          <li>
-            <ActiveLink href="/best" activeClassName="text-accent">
-              Best
-            </ActiveLink>
-          </li>
+          {links.map(({ to, title }) => (
+            <li key={title}>
+              <ActiveLink href={to} activeClassName="text-accent">
+                {title}
+              </ActiveLink>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

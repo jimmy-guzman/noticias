@@ -1,16 +1,54 @@
-export interface Story {
-  by: string;
-  descendants?: number;
+interface BaseItem {
   id: number;
+  by: string;
+  time: number;
+}
+
+export interface Story extends BaseItem {
+  type: "story";
+  descendants?: number;
   kids?: number[];
   score: number;
-  time: number;
   title: string;
-  type: "story";
   url?: string;
 }
 
-export type StoriesPrefix = "best" | "new" | "top";
+export interface Comment extends BaseItem {
+  type: "comment";
+  kids: number[];
+  parent: number;
+  text: string;
+}
+
+export interface Job extends BaseItem {
+  score: string;
+  text: string;
+  title: string;
+  type: string;
+  url: string;
+}
+
+export interface Show extends BaseItem {
+  type: "story";
+  descendants?: number;
+  kids?: number[];
+  score: number;
+  title: string;
+  url?: string;
+}
+
+export interface Ask extends BaseItem {
+  type: "story";
+  descendants: number;
+  kids: number[];
+  score: number;
+  text: string;
+  title: string;
+}
+
+export type Item = Ask | Job | Show | Story;
+
+export type StoriesPrefix = "ask" | "best" | "job" | "new" | "show" | "top";
 export type Route = `${StoriesPrefix}stories` | `item/${number}`;
 export type Versions = 0;
 
@@ -18,25 +56,26 @@ export const hackerNewsApi = (route: Route, version: Versions = 0) => {
   return `https://hacker-news.firebaseio.com/v${version}/${route}.json?print=pretty`;
 };
 
-export const fetchStory = async (id: number) => {
+export const fetchItem = async <TItem extends Item>(id: number) => {
   const response = await fetch(hackerNewsApi(`item/${id}`));
-  const story: Story = await response.json();
+  const story: TItem = await response.json();
 
-  return { ...story };
+  return story;
 };
 
-export const createFetchStories = (type: StoriesPrefix) => {
+export const createFetchItems = <TItem extends Item>(type: StoriesPrefix) => {
   return async () => {
     const response = await fetch(hackerNewsApi(`${type}stories`));
     const stories: number[] = await response.json();
-    const results = await Promise.all(stories.map(fetchStory));
+    const results = await Promise.all(stories.map(fetchItem<TItem>));
 
     return results.filter(Boolean);
   };
 };
 
-export const fetchTopStories = createFetchStories("top");
-
-export const fetchNewStories = createFetchStories("new");
-
-export const fetchBestStories = createFetchStories("best");
+export const fetchTopStories = createFetchItems<Story>("top");
+export const fetchNewStories = createFetchItems<Story>("new");
+export const fetchBestStories = createFetchItems<Story>("best");
+export const fetchJobs = createFetchItems<Job>("job");
+export const fetchShows = createFetchItems<Show>("show");
+export const fetchAsks = createFetchItems<Ask>("ask");

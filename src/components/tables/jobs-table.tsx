@@ -1,12 +1,12 @@
 import { createColumnHelper } from "@tanstack/react-table";
 
-import type { Story } from "@/data/hacker-news";
+import type { Job } from "@/data/hacker-news";
 
 import { formatTime } from "@/utils/formatTime";
 
 import { Table } from "./table";
 
-const columnHelper = createColumnHelper<Story>();
+const columnHelper = createColumnHelper<Job>();
 
 const columns = [
   columnHelper.display({
@@ -28,14 +28,6 @@ const columns = [
         info.getValue()
       ),
   }),
-  columnHelper.accessor("score", {
-    header: "Points",
-    cell: (info) => info.getValue(),
-  }),
-  columnHelper.accessor("descendants", {
-    header: "Comments",
-    cell: (info) => info.getValue(),
-  }),
   columnHelper.accessor("by", {
     cell: (info) => info.getValue(),
   }),
@@ -45,6 +37,6 @@ const columns = [
   }),
 ];
 
-export const StoriesTable = ({ stories: data }: { stories: Story[] }) => {
+export const JobsTable = ({ jobs: data }: { jobs: Job[] }) => {
   return <Table columns={columns} data={data} />;
 };
