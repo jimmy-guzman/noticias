@@ -50,10 +50,9 @@ export type Item = Ask | Job | Show | Story;
 
 export type StoriesPrefix = "ask" | "best" | "job" | "new" | "show" | "top";
 export type Route = `${StoriesPrefix}stories` | `item/${number}`;
-export type Versions = 0;
 
-export const hackerNewsApi = (route: Route, version: Versions = 0) => {
-  return `https://hacker-news.firebaseio.com/v${version}/${route}.json?print=pretty`;
+export const hackerNewsApi = (route: Route) => {
+  return `https://hacker-news.firebaseio.com/v0/${route}.json?print=pretty`;
 };
 
 export const fetchItem = async <TItem extends Item>(id: number) => {

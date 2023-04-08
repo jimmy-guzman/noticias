@@ -9,10 +9,6 @@ import { Table } from "./table";
 const columnHelper = createColumnHelper<Job>();
 
 const columns = [
-  columnHelper.display({
-    id: "index",
-    cell: (info) => info.row.index + 1,
-  }),
   columnHelper.accessor("title", {
     cell: (info) =>
       info.row.original.url ? (

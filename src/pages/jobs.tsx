@@ -9,7 +9,7 @@ export default function Jobs() {
       {data ? (
         <JobsTable jobs={data} />
       ) : (
-        <SkeletonTable cols={[1, 4, 2, 2, 2, 2]} rows={50} />
+        <SkeletonTable cols={[4, 2, 2]} rows={50} />
       )}
     </div>
   );
