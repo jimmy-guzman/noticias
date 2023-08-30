@@ -1,3 +1,4 @@
+"use client";
 import { createColumnHelper } from "@tanstack/react-table";
 import { useMemo } from "react";
 

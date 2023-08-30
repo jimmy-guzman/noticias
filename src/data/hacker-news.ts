@@ -57,9 +57,9 @@ export const hackerNewsApi = (route: Route) => {
 
 export const fetchItem = async <TItem extends Item>(id: number) => {
   const response = await fetch(hackerNewsApi(`item/${id}`));
-  const story: TItem = await response.json();
+  const item: TItem = await response.json();
 
-  return story;
+  return item;
 };
 
 export const createFetchItems = <TItem extends Item>(type: StoriesPrefix) => {

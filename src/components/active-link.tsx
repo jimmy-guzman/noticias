@@ -1,6 +1,7 @@
+"use client";
+import clsx from "clsx";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 import type { LinkProps } from "next/link";
 import type { PropsWithChildren } from "react";
@@ -14,41 +15,18 @@ export const ActiveLink = ({
   children,
   activeClassName,
   className,
+  href,
   ...props
 }: PropsWithChildren<ActiveLinkProps>) => {
-  const { asPath, isReady } = useRouter();
-  const [computedClassName, setComputedClassName] = useState(className);
-
-  useEffect(() => {
-    if (isReady) {
-      const { pathname: linkPathname } = new URL(
-        (props.as ?? props.href) as string,
-        location.href
-      );
-
-      const { pathname: activePathname } = new URL(asPath, location.href);
-
-      const newClassName =
-        linkPathname === activePathname
-          ? `${className} ${activeClassName}`.trim()
-          : className;
-
-      if (newClassName !== computedClassName) {
-        setComputedClassName(newClassName);
-      }
-    }
-  }, [
-    asPath,
-    isReady,
-    props.as,
-    props.href,
-    activeClassName,
-    className,
-    computedClassName,
-  ]);
+  const pathname = usePathname();
+  const isActive = pathname === href;
 
   return (
-    <Link className={computedClassName} {...props}>
+    <Link
+      href={href}
+      className={clsx(className, isActive ? activeClassName : "")}
+      {...props}
+    >
       {children}
     </Link>
   );
