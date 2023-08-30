@@ -1,4 +1,4 @@
-import { SkeletonTable } from "@/components/tables";
+import { SkeletonTable } from "@/components/organisms";
 
 export default function Loading() {
   return (

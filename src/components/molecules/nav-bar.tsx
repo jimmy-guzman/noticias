@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { ActiveLink } from "./active-link";
+import { ActiveLink } from "../atoms";
 
 const links = [
   { to: "/", title: "Top" },
@@ -26,9 +26,7 @@ export const NavBar = () => {
         <ul className="menu menu-horizontal px-1">
           {links.map(({ to, title }) => (
             <li key={title}>
-              <ActiveLink href={to} activeClassName="text-accent">
-                {title}
-              </ActiveLink>
+              <ActiveLink href={to}>{title}</ActiveLink>
             </li>
           ))}
         </ul>

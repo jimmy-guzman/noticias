@@ -2,7 +2,7 @@
 import { createColumnHelper } from "@tanstack/react-table";
 import { useMemo } from "react";
 
-import { Table } from "./table";
+import { Table } from "../molecules";
 
 interface SkeletonTableProps {
   cols: number[];
@@ -21,9 +21,9 @@ export const SkeletonTable = ({ rows, cols }: SkeletonTableProps) => {
 
     return cols.map((_col, key) =>
       columnHelper.accessor(key.toString(), {
-        header: () => <div className="h-4 rounded bg-base-200" />,
+        header: () => <div className="h-4 animate-pulse rounded bg-base-200" />,
         cell: (info) => (
-          <div className="h-4 rounded bg-base-200">
+          <div className="h-4 animate-pulse rounded bg-base-200">
             <span className="invisible">{info.getValue()}</span>
           </div>
         ),

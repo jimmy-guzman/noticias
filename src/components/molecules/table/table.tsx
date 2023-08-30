@@ -8,28 +8,9 @@ import {
 import clsx from "clsx";
 import { useState } from "react";
 
-import type { SortingState, Header, ColumnDef } from "@tanstack/react-table";
+import type { SortingState, ColumnDef } from "@tanstack/react-table";
 
-const TableHeader = <T,>({ header }: { header: Header<T, unknown> }) => {
-  return (
-    <th key={header.id} className="font-extrabold uppercase">
-      {header.isPlaceholder ? null : (
-        <div
-          className={
-            header.column.getCanSort() ? "cursor-pointer select-none" : ""
-          }
-          onClick={header.column.getToggleSortingHandler()}
-        >
-          {flexRender(header.column.columnDef.header, header.getContext())}
-          {{
-            asc: " ⏶",
-            desc: " ⏷",
-          }[header.column.getIsSorted() as string] ?? null}
-        </div>
-      )}
-    </th>
-  );
-};
+import { TableHeader } from "./table-header";
 
 export const Table = <TData,>({
   className,

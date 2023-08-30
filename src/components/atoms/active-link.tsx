@@ -7,13 +7,13 @@ import type { LinkProps } from "next/link";
 import type { PropsWithChildren } from "react";
 
 type ActiveLinkProps = LinkProps & {
-  activeClassName: string;
+  activeClassName?: string;
   className?: string;
 };
 
 export const ActiveLink = ({
   children,
-  activeClassName,
+  activeClassName = "text-accent",
   className,
   href,
   ...props

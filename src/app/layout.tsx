@@ -1,4 +1,4 @@
-import Layout from "@/components/layout";
+import { NavBar } from "@/components/molecules";
 import "@/styles/globals.css";
 
 export const metadata = {
@@ -14,7 +14,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Layout>{children}</Layout>
+        <NavBar />
+        <main className="container mx-auto">{children}</main>
       </body>
     </html>
   );

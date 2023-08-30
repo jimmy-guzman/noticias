@@ -1,5 +1,5 @@
-import { StoriesTable } from "@/components/tables";
-import { fetchTopStories } from "@/data/hacker-news";
+import { StoriesTable } from "@/components/organisms";
+import { fetchTopStories } from "@/services/hacker-news";
 
 export const runtime = "edge";
 
