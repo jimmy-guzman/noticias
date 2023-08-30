@@ -12,7 +12,7 @@ import type { SortingState, Header, ColumnDef } from "@tanstack/react-table";
 
 const TableHeader = <T,>({ header }: { header: Header<T, unknown> }) => {
   return (
-    <th key={header.id}>
+    <th key={header.id} className="font-extrabold uppercase">
       {header.isPlaceholder ? null : (
         <div
           className={
@@ -54,7 +54,7 @@ export const Table = <TData,>({
 
   return (
     <div className="overflow-x-auto">
-      <table className={clsx("table-compact table w-full", className)}>
+      <table className={clsx("table-sm table", className)}>
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
