@@ -8,6 +8,8 @@ import type {
   Ask,
 } from "./types";
 
+import { isFulfilled } from "@/utils/type-guards";
+
 const hackerNewsApi = (route: Route) => {
   return `https://hacker-news.firebaseio.com/v0/${route}.json?print=pretty`;
 };
@@ -23,9 +25,10 @@ const createFetchItems = <TItem extends Item>(type: StoriesPrefix) => {
   return async () => {
     const response = await fetch(hackerNewsApi(`${type}stories`));
     const stories: number[] = await response.json();
-    const results = await Promise.all(stories.map(fetchItem<TItem>));
 
-    return results.filter(Boolean);
+    const results = await Promise.allSettled(stories.map(fetchItem<TItem>));
+
+    return results.filter(isFulfilled).map((result) => result.value);
   };
 };
 
