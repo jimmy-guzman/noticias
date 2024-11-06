@@ -11,12 +11,14 @@ const columnHelper = createColumnHelper<Story>();
 
 const columns = [
   columnHelper.display({
-    cell: (info) => {return info.row.index + 1},
+    cell: (info) => {
+      return info.row.index + 1;
+    },
     id: "index",
   }),
   columnHelper.accessor("title", {
-    cell: (info) =>
-      {return info.row.original.url ? (
+    cell: (info) => {
+      return info.row.original.url ? (
         <a
           className="link-hover link"
           href={info.row.original.url}
@@ -27,21 +29,30 @@ const columns = [
         </a>
       ) : (
         info.getValue()
-      )},
+      );
+    },
   }),
   columnHelper.accessor("score", {
-    cell: (info) => {return info.getValue()},
+    cell: (info) => {
+      return info.getValue();
+    },
     header: "Points",
   }),
   columnHelper.accessor("descendants", {
-    cell: (info) => {return info.getValue()},
+    cell: (info) => {
+      return info.getValue();
+    },
     header: "Comments",
   }),
   columnHelper.accessor("by", {
-    cell: (info) => {return info.getValue()},
+    cell: (info) => {
+      return info.getValue();
+    },
   }),
   columnHelper.accessor("time", {
-    cell: (info) => {return formatTime(info.getValue())},
+    cell: (info) => {
+      return formatTime(info.getValue());
+    },
     header: "Created",
   }),
 ];

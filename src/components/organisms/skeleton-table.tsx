@@ -15,7 +15,7 @@ export const SkeletonTable = ({ cols, rows }: SkeletonTableProps) => {
       return Object.fromEntries(
         cols.map((col, key) => {
           return [key, "#".repeat(col)];
-        })
+        }),
       );
     });
   }, [rows, cols]);

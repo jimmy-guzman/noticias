@@ -24,11 +24,13 @@ export const NavBar = () => {
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
-          {links.map(({ title, to }) => {return (
-            <li key={title}>
-              <ActiveLink href={to}>{title}</ActiveLink>
-            </li>
-          )})}
+          {links.map(({ title, to }) => {
+            return (
+              <li key={title}>
+                <ActiveLink href={to}>{title}</ActiveLink>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>
