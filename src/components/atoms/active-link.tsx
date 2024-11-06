@@ -2,7 +2,7 @@
 import type { LinkProps } from "next/link";
 import type { PropsWithChildren } from "react";
 
-import {clsx} from "clsx";
+import { clsx } from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
