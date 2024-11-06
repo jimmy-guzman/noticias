@@ -12,30 +12,30 @@
     "types": "tsc"
   },
   "dependencies": {
-    "@tanstack/react-table": "8.9.3",
-    "clsx": "2.0.0",
+    "@tanstack/react-table": "8.20.5",
+    "clsx": "2.1.1",
     "date-fns": "2.30.0",
     "ms": "2.1.3",
     "next": "13.4.19",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "0.5.9",
+    "@tailwindcss/typography": "0.5.15",
     "@types/node": "20.5.7",
-    "@types/react": "18.2.21",
-    "@types/react-dom": "18.2.7",
-    "autoprefixer": "10.4.14",
-    "daisyui": "3.6.3",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "autoprefixer": "10.4.20",
+    "daisyui": "4.12.14",
     "eslint": "8.38.0",
     "eslint-config-jimmy-guzman": "9.1.0",
     "eslint-config-next": "13.4.19",
-    "gitzy": "3.4.0",
-    "postcss": "8.4.21",
+    "gitzy": "5.5.0",
+    "postcss": "8.4.47",
     "prettier": "2.8.7",
     "prettier-plugin-tailwindcss": "0.2.7",
-    "tailwindcss": "3.3.1",
+    "tailwindcss": "3.4.14",
     "typescript": "5.0.4"
   },
-  "packageManager": "pnpm@8.7.0"
+  "packageManager": "pnpm@9.12.3"
 }
