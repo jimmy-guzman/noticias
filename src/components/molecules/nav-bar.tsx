@@ -3,12 +3,12 @@ import Link from "next/link";
 import { ActiveLink } from "../atoms";
 
 const links = [
-  { to: "/", title: "Top" },
-  { to: "/new", title: "New" },
-  { to: "/best", title: "Best" },
-  { to: "/ask", title: "Ask" },
-  { to: "/show", title: "Show" },
-  { to: "/jobs", title: "Jobs" },
+  { title: "Top", to: "/" },
+  { title: "New", to: "/new" },
+  { title: "Best", to: "/best" },
+  { title: "Ask", to: "/ask" },
+  { title: "Show", to: "/show" },
+  { title: "Jobs", to: "/jobs" },
 ];
 
 export const NavBar = () => {
@@ -16,19 +16,19 @@ export const NavBar = () => {
     <div className="navbar bg-base-100">
       <div className="flex-1">
         <Link
+          className="btn btn-ghost text-xl normal-case text-primary"
           href="/"
-          className="btn-ghost btn text-xl normal-case text-primary"
         >
           🗞️ noticias
         </Link>
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
-          {links.map(({ to, title }) => (
+          {links.map(({ title, to }) => {return (
             <li key={title}>
               <ActiveLink href={to}>{title}</ActiveLink>
             </li>
-          ))}
+          )})}
         </ul>
       </div>
     </div>

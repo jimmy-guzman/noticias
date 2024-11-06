@@ -2,8 +2,8 @@ import { NavBar } from "@/components/molecules";
 import "@/styles/globals.css";
 
 export const metadata = {
-  title: "noticias",
   description: "news(noticias) aggregator for developers",
+  title: "noticias",
 };
 
 export default function RootLayout({

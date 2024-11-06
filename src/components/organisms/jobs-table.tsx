@@ -12,25 +12,25 @@ const columnHelper = createColumnHelper<Job>();
 const columns = [
   columnHelper.accessor("title", {
     cell: (info) =>
-      info.row.original.url ? (
+      {return info.row.original.url ? (
         <a
-          href={info.row.original.url}
           className="link-hover link"
-          target="_blank"
+          href={info.row.original.url}
           rel="noopener noreferrer"
+          target="_blank"
         >
           {info.getValue()}
         </a>
       ) : (
         info.getValue()
-      ),
+      )},
   }),
   columnHelper.accessor("by", {
-    cell: (info) => info.getValue(),
+    cell: (info) => {return info.getValue()},
   }),
   columnHelper.accessor("time", {
+    cell: (info) => {return formatTime(info.getValue())},
     header: "Created",
-    cell: (info) => formatTime(info.getValue()),
   }),
 ];
 

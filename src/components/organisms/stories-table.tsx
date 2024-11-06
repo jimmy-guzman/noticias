@@ -11,38 +11,38 @@ const columnHelper = createColumnHelper<Story>();
 
 const columns = [
   columnHelper.display({
+    cell: (info) => {return info.row.index + 1},
     id: "index",
-    cell: (info) => info.row.index + 1,
   }),
   columnHelper.accessor("title", {
     cell: (info) =>
-      info.row.original.url ? (
+      {return info.row.original.url ? (
         <a
-          href={info.row.original.url}
           className="link-hover link"
-          target="_blank"
+          href={info.row.original.url}
           rel="noopener noreferrer"
+          target="_blank"
         >
           {info.getValue()}
         </a>
       ) : (
         info.getValue()
-      ),
+      )},
   }),
   columnHelper.accessor("score", {
+    cell: (info) => {return info.getValue()},
     header: "Points",
-    cell: (info) => info.getValue(),
   }),
   columnHelper.accessor("descendants", {
+    cell: (info) => {return info.getValue()},
     header: "Comments",
-    cell: (info) => info.getValue(),
   }),
   columnHelper.accessor("by", {
-    cell: (info) => info.getValue(),
+    cell: (info) => {return info.getValue()},
   }),
   columnHelper.accessor("time", {
+    cell: (info) => {return formatTime(info.getValue())},
     header: "Created",
-    cell: (info) => formatTime(info.getValue()),
   }),
 ];
 
