@@ -1,14 +1,14 @@
 "use client";
-import {
-  useReactTable,
-  getCoreRowModel,
-  flexRender,
-  getSortedRowModel,
-} from "@tanstack/react-table";
-import clsx from "clsx";
-import { useState } from "react";
+import type { ColumnDef, SortingState } from "@tanstack/react-table";
 
-import type { SortingState, ColumnDef } from "@tanstack/react-table";
+import {
+  flexRender,
+  getCoreRowModel,
+  getSortedRowModel,
+  useReactTable,
+} from "@tanstack/react-table";
+import { clsx } from "clsx";
+import { useState } from "react";
 
 import { TableHeader } from "./table-header";
 
@@ -18,7 +18,7 @@ export const Table = <TData,>({
   data,
 }: {
   className?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- TODO: refactor
   columns: ColumnDef<TData, any>[];
   data: TData[];
 }) => {
@@ -35,26 +35,35 @@ export const Table = <TData,>({
 
   return (
     <div className="overflow-x-auto">
-      <table className={clsx("table-sm table", className)}>
+      <table className={clsx("table table-sm", className)}>
         <thead>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
-                <TableHeader key={header.id} header={header} />
-              ))}
-            </tr>
-          ))}
+          {table.getHeaderGroups().map((headerGroup) => {
+            return (
+              <tr key={headerGroup.id}>
+                {headerGroup.headers.map((header) => {
+                  return <TableHeader header={header} key={header.id} />;
+                })}
+              </tr>
+            );
+          })}
         </thead>
         <tbody>
-          {table.getRowModel().rows.map((row) => (
-            <tr key={row.id}>
-              {row.getVisibleCells().map((cell) => (
-                <td key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
-              ))}
-            </tr>
-          ))}
+          {table.getRowModel().rows.map((row) => {
+            return (
+              <tr key={row.id}>
+                {row.getVisibleCells().map((cell) => {
+                  return (
+                    <td key={cell.id}>
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext()
+                      )}
+                    </td>
+                  );
+                })}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

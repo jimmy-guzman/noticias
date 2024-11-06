@@ -1,10 +1,10 @@
 export {
-  fetchTopStories,
-  fetchNewStories,
+  fetchAsks,
   fetchBestStories,
   fetchJobs,
+  fetchNewStories,
   fetchShows,
-  fetchAsks,
+  fetchTopStories,
 } from "./apis";
 
-export type { Job, Show, Ask, Story } from "./types";
+export type { Ask, Job, Show, Story } from "./types";

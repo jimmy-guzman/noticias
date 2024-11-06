@@ -1,19 +1,19 @@
 "use client";
-import clsx from "clsx";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-
 import type { LinkProps } from "next/link";
 import type { PropsWithChildren } from "react";
 
-type ActiveLinkProps = LinkProps & {
+import {clsx} from "clsx";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+type ActiveLinkProps = {
   activeClassName?: string;
   className?: string;
-};
+} & LinkProps;
 
 export const ActiveLink = ({
-  children,
   activeClassName = "text-accent",
+  children,
   className,
   href,
   ...props
@@ -23,8 +23,8 @@ export const ActiveLink = ({
 
   return (
     <Link
-      href={href}
       className={clsx(className, isActive ? activeClassName : "")}
+      href={href}
       {...props}
     >
       {children}

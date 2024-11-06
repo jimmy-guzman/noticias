@@ -9,27 +9,37 @@ interface SkeletonTableProps {
   rows: number;
 }
 
-export const SkeletonTable = ({ rows, cols }: SkeletonTableProps) => {
+export const SkeletonTable = ({ cols, rows }: SkeletonTableProps) => {
   const data = useMemo(() => {
     return Array.from({ length: rows }, () => {
-      return Object.fromEntries(cols.map((col, key) => [key, "#".repeat(col)]));
+      return Object.fromEntries(
+        cols.map((col, key) => {
+          return [key, "#".repeat(col)];
+        })
+      );
     });
   }, [rows, cols]);
 
   const columns = useMemo(() => {
     const columnHelper = createColumnHelper<Record<string, string>>();
 
-    return cols.map((_col, key) =>
-      columnHelper.accessor(key.toString(), {
-        header: () => <div className="h-4 animate-pulse rounded bg-base-200" />,
-        cell: (info) => (
-          <div className="h-4 animate-pulse rounded bg-base-200">
-            <span className="invisible">{info.getValue()}</span>
-          </div>
-        ),
-      })
-    );
+    return cols.map((_col, key) => {
+      return columnHelper.accessor(key.toString(), {
+        // eslint-disable-next-line react/no-unstable-nested-components -- TODO: refactor
+        cell: (info) => {
+          return (
+            <div className="h-4 animate-pulse rounded bg-base-200">
+              <span className="invisible">{info.getValue()}</span>
+            </div>
+          );
+        },
+        // eslint-disable-next-line react/no-unstable-nested-components -- TODO: refactor
+        header: () => {
+          return <div className="h-4 animate-pulse rounded bg-base-200" />;
+        },
+      });
+    });
   }, [cols]);
 
-  return <Table columns={columns} data={data} className="animate-pulse" />;
+  return <Table className="animate-pulse" columns={columns} data={data} />;
 };
