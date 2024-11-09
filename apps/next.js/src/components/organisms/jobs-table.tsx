@@ -3,7 +3,7 @@ import type { Job } from "@noticias/hn";
 
 import { createColumnHelper } from "@tanstack/react-table";
 
-import { formatTime } from "@/utils/format-time";
+import { formatTimestamp } from "@/utils/format-time";
 
 import { Table } from "../molecules";
 
@@ -34,7 +34,7 @@ const columns = [
   }),
   columnHelper.accessor("time", {
     cell: (info) => {
-      return formatTime(info.getValue());
+      return formatTimestamp(info.getValue());
     },
     header: "Created",
   }),
