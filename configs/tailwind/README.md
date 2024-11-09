@@ -1,0 +1,1 @@
+# @noticias/tailwind-config

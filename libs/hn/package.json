@@ -4,8 +4,8 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "typecheck": "tsc",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "typecheck": "tsc"
   },
   "devDependencies": {
     "@jimmy.codes/eslint-config": "3.10.0",

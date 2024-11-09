@@ -61,9 +61,9 @@ importers:
       '@next/eslint-plugin-next':
         specifier: 15.0.3
         version: 15.0.3
-      '@tailwindcss/typography':
-        specifier: 0.5.15
-        version: 0.5.15(tailwindcss@3.4.14)
+      '@noticias/tailwind-config':
+        specifier: workspace:*
+        version: link:../../configs/tailwind
       '@types/node':
         specifier: 20.5.7
         version: 20.5.7
@@ -76,15 +76,25 @@ importers:
       autoprefixer:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.47)
-      daisyui:
-        specifier: 4.12.14
-        version: 4.12.14(postcss@8.4.47)
       eslint:
         specifier: 9.14.0
         version: 9.14.0(jiti@2.4.0)
       postcss:
         specifier: 8.4.47
         version: 8.4.47
+      tailwindcss:
+        specifier: 3.4.14
+        version: 3.4.14
+
+  configs/tailwind:
+    dependencies:
+      '@tailwindcss/typography':
+        specifier: 0.5.15
+        version: 0.5.15(tailwindcss@3.4.14)
+      daisyui:
+        specifier: 4.12.14
+        version: 4.12.14(postcss@8.4.47)
+    devDependencies:
       tailwindcss:
         specifier: 3.4.14
         version: 3.4.14
