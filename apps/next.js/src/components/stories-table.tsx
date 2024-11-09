@@ -1,15 +1,20 @@
 "use client";
-import type { Job } from "@noticias/hn";
+import type { Story } from "@noticias/hn";
 
+import { Table } from "@noticias/ui/table";
 import { createColumnHelper } from "@tanstack/react-table";
 
 import { formatTimestamp } from "@/utils/format-time";
 
-import { Table } from "../molecules";
-
-const columnHelper = createColumnHelper<Job>();
+const columnHelper = createColumnHelper<Story>();
 
 const columns = [
+  columnHelper.display({
+    cell: (info) => {
+      return info.row.index + 1;
+    },
+    id: "index",
+  }),
   columnHelper.accessor("title", {
     cell: (info) => {
       return info.row.original.url ? (
@@ -26,6 +31,18 @@ const columns = [
       );
     },
   }),
+  columnHelper.accessor("score", {
+    cell: (info) => {
+      return info.getValue();
+    },
+    header: "Points",
+  }),
+  columnHelper.accessor("descendants", {
+    cell: (info) => {
+      return info.getValue();
+    },
+    header: "Comments",
+  }),
   columnHelper.accessor("by", {
     cell: (info) => {
       return info.getValue();
@@ -40,6 +57,6 @@ const columns = [
   }),
 ];
 
-export const JobsTable = ({ jobs: data }: { jobs: Job[] }) => {
+export const StoriesTable = ({ stories: data }: { stories: Story[] }) => {
   return <Table columns={columns} data={data} />;
 };

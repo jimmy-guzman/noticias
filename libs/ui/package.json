@@ -1,0 +1,26 @@
+{
+  "name": "@noticias/ui",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./table": "./src/table.tsx",
+    "./skeleton-table": "./src/skeleton-table.tsx"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@tanstack/react-table": "8.20.5",
+    "clsx": "2.1.1",
+    "react": "19.0.0-rc-66855b96-20241106"
+  },
+  "devDependencies": {
+    "@jimmy.codes/eslint-config": "3.11.0",
+    "@noticias/ts-config": "workspace:*",
+    "@types/node": "20.5.7",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+    "eslint": "9.14.0"
+  }
+}

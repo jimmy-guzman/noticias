@@ -1,5 +1,5 @@
-import { NavBar } from "@/components/molecules";
-import { Tabs } from "@/components/molecules/tabs";
+import { NavBar } from "@/components/nav-bar";
+import { Tabs } from "@/components/tabs";
 import "@/styles/globals.css";
 
 export const metadata = {

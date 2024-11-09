@@ -5,11 +5,12 @@
 ## apps
 
 - [next.js](./apps/next.js/README.md): a [Next.js](https://nextjs.org) implementation.
-  - [TanStack Table](https://tanstack.com/table/latest)
 
 ## libs
 
 - [@noticias/hn](./libs/hn/README.md): a wrapper on top of the [Hacker News API](https://github.com/HackerNews/API?tab=readme-ov-file#hacker-news-api).
+- [@noticias/ui](./libs/ui/README.md): shareable [React](https://react.dev) UI components.
+  - [TanStack Table](https://tanstack.com/table/latest)
 
 ## configs
 
