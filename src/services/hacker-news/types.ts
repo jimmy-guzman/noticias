@@ -13,7 +13,8 @@ export interface Story extends BaseItem {
   url?: string;
 }
 
-export interface Comment extends BaseItem {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- TODO: use
+interface Comment extends BaseItem {
   kids: number[];
   parent: number;
   text: string;
