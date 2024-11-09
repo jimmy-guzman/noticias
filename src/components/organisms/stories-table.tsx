@@ -48,6 +48,7 @@ const columns = [
     cell: (info) => {
       return info.getValue();
     },
+    header: "Created By",
   }),
   columnHelper.accessor("time", {
     cell: (info) => {
