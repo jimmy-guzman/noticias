@@ -5,7 +5,7 @@ export const NavBar = () => {
     <nav className="navbar bg-base-100">
       <div className="flex-1">
         <Link
-          className="btn btn-ghost text-xl normal-case text-primary"
+          className="btn btn-ghost text-primary text-xl normal-case"
           href="/"
         >
           🗞️ noticias

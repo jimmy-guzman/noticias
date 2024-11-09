@@ -28,14 +28,14 @@ export const SkeletonTable = ({ cols, rows }: SkeletonTableProps) => {
         // eslint-disable-next-line react/no-unstable-nested-components -- TODO: refactor
         cell: (info) => {
           return (
-            <div className="h-4 animate-pulse rounded bg-base-200">
+            <div className="bg-base-200 h-4 animate-pulse rounded">
               <span className="invisible">{info.getValue()}</span>
             </div>
           );
         },
         // eslint-disable-next-line react/no-unstable-nested-components -- TODO: refactor
         header: () => {
-          return <div className="h-4 animate-pulse rounded bg-base-200" />;
+          return <div className="bg-base-200 h-4 animate-pulse rounded" />;
         },
       });
     });
