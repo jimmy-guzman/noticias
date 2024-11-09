@@ -18,7 +18,7 @@
     "react-dom": "19.0.0-rc-66855b96-20241106"
   },
   "devDependencies": {
-    "@jimmy.codes/eslint-config": "3.10.0",
+    "@jimmy.codes/eslint-config": "3.11.0",
     "@next/eslint-plugin-next": "15.0.3",
     "@noticias/tailwind-config": "workspace:*",
     "@types/node": "20.5.7",
