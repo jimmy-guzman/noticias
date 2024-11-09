@@ -1,4 +1,4 @@
-import { ActiveLink } from "../atoms";
+import { ActiveLink } from "./active-link";
 
 const links = [
   { title: "Top", to: "/" },

@@ -39,6 +39,9 @@ importers:
       '@noticias/hn':
         specifier: workspace:*
         version: link:../../libs/hn
+      '@noticias/ui':
+        specifier: workspace:*
+        version: link:../../libs/ui
       '@tanstack/react-table':
         specifier: 8.20.5
         version: 8.20.5(react-dom@19.0.0-rc-66855b96-20241106(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106)
@@ -118,6 +121,37 @@ importers:
       '@types/node':
         specifier: 20.5.7
         version: 20.5.7
+      eslint:
+        specifier: 9.14.0
+        version: 9.14.0(jiti@2.4.0)
+
+  libs/ui:
+    dependencies:
+      '@tanstack/react-table':
+        specifier: 8.20.5
+        version: 8.20.5(react-dom@19.0.0-rc-66855b96-20241106(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106)
+      clsx:
+        specifier: 2.1.1
+        version: 2.1.1
+      react:
+        specifier: 19.0.0-rc-66855b96-20241106
+        version: 19.0.0-rc-66855b96-20241106
+    devDependencies:
+      '@jimmy.codes/eslint-config':
+        specifier: 3.11.0
+        version: 3.11.0(@typescript-eslint/eslint-plugin@8.13.0(@typescript-eslint/parser@8.13.0(eslint@9.14.0(jiti@2.4.0))(typescript@5.6.3))(eslint@9.14.0(jiti@2.4.0))(typescript@5.6.3))(eslint@9.14.0(jiti@2.4.0))(typescript@5.6.3)
+      '@noticias/ts-config':
+        specifier: workspace:*
+        version: link:../../configs/ts-config
+      '@types/node':
+        specifier: 20.5.7
+        version: 20.5.7
+      '@types/react':
+        specifier: npm:types-react@19.0.0-rc.1
+        version: types-react@19.0.0-rc.1
+      '@types/react-dom':
+        specifier: npm:types-react-dom@19.0.0-rc.1
+        version: types-react-dom@19.0.0-rc.1
       eslint:
         specifier: 9.14.0
         version: 9.14.0(jiti@2.4.0)

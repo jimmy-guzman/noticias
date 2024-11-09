@@ -2,7 +2,7 @@
 import { createColumnHelper } from "@tanstack/react-table";
 import { useMemo } from "react";
 
-import { Table } from "../molecules";
+import { Table } from "./table";
 
 interface SkeletonTableProps {
   cols: number[];
