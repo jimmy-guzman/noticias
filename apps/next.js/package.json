@@ -20,6 +20,7 @@
     "@jimmy.codes/eslint-config": "3.11.0",
     "@next/eslint-plugin-next": "15.0.3",
     "@noticias/tailwind-config": "workspace:*",
+    "@noticias/ts-config": "workspace:*",
     "@types/node": "20.5.7",
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
