@@ -140,6 +140,9 @@ importers:
       '@jimmy.codes/eslint-config':
         specifier: 3.11.0
         version: 3.11.0(@typescript-eslint/eslint-plugin@8.13.0(@typescript-eslint/parser@8.13.0(eslint@9.14.0(jiti@2.4.0))(typescript@5.6.3))(eslint@9.14.0(jiti@2.4.0))(typescript@5.6.3))(eslint@9.14.0(jiti@2.4.0))(typescript@5.6.3)
+      '@noticias/tailwind-config':
+        specifier: workspace:*
+        version: link:../../configs/tailwind-config
       '@noticias/ts-config':
         specifier: workspace:*
         version: link:../../configs/ts-config
@@ -155,6 +158,9 @@ importers:
       eslint:
         specifier: 9.14.0
         version: 9.14.0(jiti@2.4.0)
+      tailwindcss:
+        specifier: 3.4.14
+        version: 3.4.14
 
 packages:
 

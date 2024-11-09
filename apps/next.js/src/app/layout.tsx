@@ -1,6 +1,8 @@
+import "@/styles/globals.css";
+import "@noticias/ui/styles.css";
+
 import { NavBar } from "@/components/nav-bar";
 import { Tabs } from "@/components/tabs";
-import "@/styles/globals.css";
 
 export const metadata = {
   description: "news(noticias) aggregator for developers",
