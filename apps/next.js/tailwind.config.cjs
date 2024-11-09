@@ -1,12 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/pages/**/*.{ts,tsx}",
-    "./src/components/**/*.{ts,tsx}",
-    "./src/app/**/*.{ts,tsx}",
-  ],
-  daisyui: {
-    themes: ["coffee"],
-  },
-  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  content: ["./src/components/**/*.{ts,tsx}", "./src/app/**/*.{ts,tsx}"],
+  // eslint-disable-next-line @typescript-eslint/no-require-imports -- TODO:
+  presets: [require("@noticias/tailwind-config")],
 };
