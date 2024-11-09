@@ -1,5 +1,6 @@
 {
   "name": "@noticias/hn",
+  "private": true,
   "exports": {
     ".": "./src/index.ts"
   },
