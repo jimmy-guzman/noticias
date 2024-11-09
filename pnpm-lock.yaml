@@ -66,7 +66,7 @@ importers:
         version: 15.0.3
       '@noticias/tailwind-config':
         specifier: workspace:*
-        version: link:../../configs/tailwind
+        version: link:../../configs/tailwind-config
       '@noticias/ts-config':
         specifier: workspace:*
         version: link:../../configs/ts-config
@@ -92,7 +92,7 @@ importers:
         specifier: 3.4.14
         version: 3.4.14
 
-  configs/tailwind:
+  configs/tailwind-config:
     dependencies:
       '@tailwindcss/typography':
         specifier: 0.5.15
