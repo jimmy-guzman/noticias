@@ -8,7 +8,7 @@ interface BaseItem {
    */
   id: number;
   /**
-   * Creation date of the item, in Unix Time.
+   * Creation date of the item, in UNIX Time.
    */
   time: number;
 }
