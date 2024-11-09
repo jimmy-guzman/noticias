@@ -8,7 +8,8 @@
     "noticias",
     "tailwindcss",
     "tanstack",
-    "trpc"
+    "trpc",
+    "typecheck"
   ],
   "editor.formatOnSave": true,
   "css.lint.unknownAtRules": "ignore",
