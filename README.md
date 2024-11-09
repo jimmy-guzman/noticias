@@ -1,6 +1,6 @@
 # 🗞️ noticias
 
-> a [Turborepo](https://turbo.build/repo) of different implementations of [Hacker News](https://news.ycombinator.com).
+> a [Turborepo](https://turbo.build/repo) of [Hacker News](https://news.ycombinator.com) clones.
 
 ## apps
 
@@ -9,7 +9,7 @@
 
 ## libs
 
-- [@noticias/hn](./libs/hn/README.md): a wrapper on top of the [Hacker News API](https://github.com/HackerNews/API?tab=readme-ov-file#hacker-news-api)
+- [@noticias/hn](./libs/hn/README.md): a wrapper on top of the [Hacker News API](https://github.com/HackerNews/API?tab=readme-ov-file#hacker-news-api).
 
 ## configs
 
