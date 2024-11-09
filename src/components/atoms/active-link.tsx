@@ -1,6 +1,6 @@
 "use client";
 import type { LinkProps } from "next/link";
-import type { PropsWithChildren } from "react";
+import type { AriaRole, PropsWithChildren } from "react";
 
 import { clsx } from "clsx";
 import Link from "next/link";
@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 type ActiveLinkProps = {
   activeClassName?: string;
   className?: string;
+  role?: AriaRole;
 } & LinkProps;
 
 export const ActiveLink = ({
@@ -16,6 +17,7 @@ export const ActiveLink = ({
   children,
   className,
   href,
+  role,
   ...props
 }: PropsWithChildren<ActiveLinkProps>) => {
   const pathname = usePathname();
@@ -25,6 +27,7 @@ export const ActiveLink = ({
     <Link
       className={clsx(className, isActive ? activeClassName : "")}
       href={href}
+      role={role}
       {...props}
     >
       {children}
