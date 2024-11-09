@@ -35,7 +35,7 @@ export const Table = <TData,>({
 
   return (
     <div className="overflow-x-auto">
-      <table className={clsx("table table-sm", className)}>
+      <table className={clsx("table table-xs md:table-sm", className)}>
         <thead>
           {table.getHeaderGroups().map((headerGroup) => {
             return (

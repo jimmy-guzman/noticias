@@ -23,7 +23,7 @@ export const NavBar = () => {
         </Link>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal menu-xs md:menu-md">
           {links.map(({ title, to }) => {
             return (
               <li key={title}>

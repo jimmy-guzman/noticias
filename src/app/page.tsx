@@ -4,9 +4,5 @@ import { fetchTopStories } from "@/services/hacker-news";
 export default async function Page() {
   const data = await fetchTopStories();
 
-  return (
-    <div className="prose max-w-none">
-      <StoriesTable stories={data} />
-    </div>
-  );
+  return <StoriesTable stories={data} />;
 }
