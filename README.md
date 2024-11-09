@@ -13,6 +13,7 @@
 
 ## configs
 
-- [@noticias/tailwind](./configs/tailwind/README.md): a shareable [Tailwind CSS](https://tailwindcss.com/) config.
+- [@noticias/tailwind-config](./configs/tailwind/README.md): a shareable [Tailwind CSS](https://tailwindcss.com/) config.
   - [daisyUI](https://daisyui.com)
   - [tailwind typography](https://tailwindcss-typography.vercel.app)
+- [@noticias/tsconfig](./configs/ts-config/README.md): a shareable [TypeScript](https://www.typescriptlang.org/) configs.
