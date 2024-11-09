@@ -1,7 +1,7 @@
 "use client";
-import { createColumnHelper } from "@tanstack/react-table";
+import type { Story } from "@noticias/hn";
 
-import type { Story } from "@/services/hacker-news";
+import { createColumnHelper } from "@tanstack/react-table";
 
 import { formatTime } from "@/utils/format-time";
 

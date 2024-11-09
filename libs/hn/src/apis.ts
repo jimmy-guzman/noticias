@@ -1,5 +1,3 @@
-import { isFulfilled } from "@/utils/type-guards";
-
 import type {
   Ask,
   Item,
@@ -9,6 +7,12 @@ import type {
   StoriesPrefix,
   Story,
 } from "./types";
+
+const isFulfilled = <T>(
+  result: PromiseSettledResult<T>,
+): result is PromiseFulfilledResult<T> => {
+  return result.status === "fulfilled";
+};
 
 const hackerNewsApi = (route: Route) => {
   return `https://hacker-news.firebaseio.com/v0/${route}.json?print=pretty`;
