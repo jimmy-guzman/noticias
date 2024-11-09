@@ -2,7 +2,7 @@
   "name": "@noticias/tailwind-config",
   "private": true,
   "exports": {
-    ".": "./tailwind.config.cjs"
+    ".": "./tailwind.config.ts"
   },
   "dependencies": {
     "@tailwindcss/typography": "0.5.15",

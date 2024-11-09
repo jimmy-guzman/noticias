@@ -1,5 +1,5 @@
 import { formatDistanceToNow, fromUnixTime } from "date-fns";
 
-export const formatTime = (time: number) => {
-  return `${formatDistanceToNow(fromUnixTime(time))} ago`;
+export const formatTimestamp = (unixTimestamp: number) => {
+  return formatDistanceToNow(fromUnixTime(unixTimestamp), { addSuffix: true });
 };
