@@ -6,11 +6,11 @@ import { clsx } from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-type ActiveLinkProps = {
+type ActiveLinkProps = LinkProps & {
   activeClassName?: string;
   className?: string;
   role?: AriaRole;
-} & LinkProps;
+};
 
 export const ActiveLink = ({
   activeClassName = "text-accent",

@@ -18,16 +18,15 @@
     "react-dom": "19.0.0-rc-66855b96-20241106"
   },
   "devDependencies": {
-    "@jimmy.codes/eslint-config": "3.13.0",
-    "@next/eslint-plugin-next": "15.0.3",
+    "@jimmy.codes/eslint-config": "3.25.0",
     "@noticias/tailwind-config": "workspace:*",
     "@noticias/ts-config": "workspace:*",
     "@types/node": "20.5.7",
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "autoprefixer": "10.4.20",
-    "eslint": "9.14.0",
+    "eslint": "9.16.0",
     "postcss": "8.4.49",
-    "tailwindcss": "3.4.14"
+    "tailwindcss": "3.4.15"
   }
 }
