@@ -1,16 +1,28 @@
-import Link from "next/link";
+import { ActiveLink } from "./active-link";
+
+const links = [
+  { title: "Top", to: "/" },
+  { title: "New", to: "/new" },
+  { title: "Best", to: "/best" },
+  { title: "Ask", to: "/ask" },
+  { title: "Show", to: "/show" },
+  { title: "Jobs", to: "/jobs" },
+];
 
 export const NavBar = () => {
   return (
-    <nav className="navbar bg-base-100">
-      <div className="flex-1">
-        <Link
-          className="btn btn-ghost text-primary text-xl normal-case"
-          href="/"
-        >
-          🗞️ noticias
-        </Link>
-      </div>
-    </nav>
+    <header className="flex justify-center">
+      <nav className="menu menu-horizontal">
+        {links.map(({ title, to }) => {
+          return (
+            <li key={title}>
+              <ActiveLink activeClassName="menu-active" href={to}>
+                {title}
+              </ActiveLink>
+            </li>
+          );
+        })}
+      </nav>
+    </header>
   );
 };

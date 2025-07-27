@@ -8,12 +8,6 @@ import type {
   Story,
 } from "./types";
 
-const isFulfilled = <T>(
-  result: PromiseSettledResult<T>,
-): result is PromiseFulfilledResult<T> => {
-  return result.status === "fulfilled";
-};
-
 const hackerNewsApi = (route: Route) => {
   return `https://hacker-news.firebaseio.com/v0/${route}.json?print=pretty`;
 };
@@ -32,9 +26,13 @@ const createFetchItems = <TItem extends Item>(type: StoriesPrefix) => {
 
     const results = await Promise.allSettled(stories.map(fetchItem<TItem>));
 
-    return results.filter(isFulfilled).map((result) => {
-      return result.value;
-    });
+    return results
+      .filter((result) => {
+        return result.status === "fulfilled";
+      })
+      .map((result) => {
+        return result.value;
+      });
   };
 };
 
