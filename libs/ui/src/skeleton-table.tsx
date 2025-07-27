@@ -1,4 +1,5 @@
 "use client";
+
 import { createColumnHelper } from "@tanstack/react-table";
 import { useMemo } from "react";
 
@@ -25,7 +26,6 @@ export const SkeletonTable = ({ cols, rows }: SkeletonTableProps) => {
 
     return cols.map((_col, key) => {
       return columnHelper.accessor(key.toString(), {
-        // eslint-disable-next-line react/no-unstable-nested-components -- TODO: refactor
         cell: (info) => {
           return (
             <div className="bg-base-200 h-4 animate-pulse rounded">
@@ -33,7 +33,7 @@ export const SkeletonTable = ({ cols, rows }: SkeletonTableProps) => {
             </div>
           );
         },
-        // eslint-disable-next-line react/no-unstable-nested-components -- TODO: refactor
+
         header: () => {
           return <div className="bg-base-200 h-4 animate-pulse rounded" />;
         },

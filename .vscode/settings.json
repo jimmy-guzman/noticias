@@ -19,5 +19,7 @@
   "css.lint.unknownAtRules": "ignore",
   "tailwindCSS.experimental.classRegex": [
     ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-  ]
+  ],
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

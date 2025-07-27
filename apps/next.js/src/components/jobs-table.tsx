@@ -1,4 +1,5 @@
 "use client";
+
 import type { Job } from "@noticias/hn";
 
 import { Table } from "@noticias/ui/table";
