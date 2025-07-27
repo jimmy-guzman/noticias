@@ -14,18 +14,18 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@tanstack/react-table": "8.20.5",
+    "@tanstack/react-table": "8.21.3",
     "clsx": "2.1.1",
-    "react": "19.0.0-rc-66855b96-20241106"
+    "react": "19.1.0"
   },
   "devDependencies": {
-    "@jimmy.codes/eslint-config": "3.25.0",
+    "@jimmy.codes/eslint-config": "6.0.0",
     "@noticias/tailwind-config": "workspace:*",
     "@noticias/ts-config": "workspace:*",
-    "@types/node": "20.5.7",
-    "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
-    "eslint": "9.16.0",
+    "@types/node": "24.1.0",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
+    "eslint": "9.32.0",
     "tailwindcss": "3.4.15"
   }
 }

@@ -9,9 +9,9 @@
     "typecheck": "tsc"
   },
   "devDependencies": {
-    "@jimmy.codes/eslint-config": "3.25.0",
+    "@jimmy.codes/eslint-config": "6.0.0",
     "@noticias/ts-config": "workspace:*",
-    "@types/node": "20.5.7",
-    "eslint": "9.16.0"
+    "@types/node": "24.1.0",
+    "eslint": "9.32.0"
   }
 }
