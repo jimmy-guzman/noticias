@@ -1,8 +1,6 @@
 import "@/styles/globals.css";
-import "@noticias/ui/styles.css";
 
 import { NavBar } from "@/components/nav-bar";
-import { Tabs } from "@/components/tabs";
 
 export const metadata = {
   description: "news(noticias) aggregator for developers",
@@ -16,11 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="md:container md:mx-auto">
         <NavBar />
-        <main className="md:container md:mx-auto">
-          <Tabs />
-          <div className="mt-8">{children}</div>
+        <main>
+          <div>{children}</div>
         </main>
       </body>
     </html>
