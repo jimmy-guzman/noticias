@@ -27,12 +27,8 @@ const createFetchItems = <TItem extends Item>(type: StoriesPrefix) => {
     const results = await Promise.allSettled(stories.map(fetchItem<TItem>));
 
     return results
-      .filter((result) => {
-        return result.status === "fulfilled";
-      })
-      .map((result) => {
-        return result.value;
-      });
+      .filter((result) => result.status === "fulfilled")
+      .map((result) => result.value);
   };
 };
 

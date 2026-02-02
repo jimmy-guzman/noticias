@@ -7,7 +7,7 @@ const links = [
   { title: "Ask", to: "/ask" },
   { title: "Show", to: "/show" },
   { title: "Jobs", to: "/jobs" },
-];
+] as const;
 
 export const NavBar = () => {
   return (

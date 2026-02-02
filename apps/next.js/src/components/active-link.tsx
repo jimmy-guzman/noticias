@@ -1,13 +1,14 @@
 "use client";
 
 import type { LinkProps } from "next/link";
+import type { Route } from "next/types";
 import type { AriaRole, PropsWithChildren } from "react";
 
 import { clsx } from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-type ActiveLinkProps = LinkProps & {
+type ActiveLinkProps = LinkProps<Route> & {
   activeClassName?: string;
   className?: string;
   role?: AriaRole;

@@ -11,13 +11,13 @@
   },
   "prettier": "@jimmy.codes/prettier-config",
   "devDependencies": {
-    "@jimmy.codes/prettier-config": "1.6.0",
-    "gitzy": "5.9.0",
-    "knip": "5.62.0",
-    "lefthook": "1.12.2",
-    "prettier": "3.6.2",
-    "turbo": "2.5.5",
-    "typescript": "5.8.3"
+    "@jimmy.codes/prettier-config": "2.1.2",
+    "gitzy": "6.5.7",
+    "knip": "5.83.0",
+    "lefthook": "2.0.16",
+    "prettier": "3.8.1",
+    "turbo": "2.8.1",
+    "typescript": "5.9.3"
   },
-  "packageManager": "pnpm@10.13.1"
+  "packageManager": "pnpm@10.28.2"
 }
